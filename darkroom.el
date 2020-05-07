@@ -6,7 +6,7 @@
 ;; Maintainer: João Távora <joaotavora@gmail.com>
 ;; Keywords: convenience, emulations
 ;; Package-Requires: ((cl-lib "0.5"))
-;; Version: 0.2
+;; Version: 0.3
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -171,7 +171,7 @@ window's geometry."
                            (goto-char (point-min))
                            (cl-loop for start = (point)
                                     while (search-forward "\n"
-                                                          20000
+                                                          (+ 20000 (point-min))
                                                           'no-error)
                                     for width = (truncate
                                                  (car
